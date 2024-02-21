@@ -72,6 +72,9 @@ class HomePage extends ConsumerWidget {
                   onPressed: () {
                     showDialog(
                       context: context,
+                      // builder callback에 주어진 context는 flutter framework가 준
+                      // context고 이 context를 따라가면 material page를 만나게 됩니다.
+                      // 그렇기 때문에 top-level Provider Scope를 사용하게 됩니다.
                       builder: (c) {
                         return ProviderScope(
                           parent: ProviderScope.containerOf(context),
